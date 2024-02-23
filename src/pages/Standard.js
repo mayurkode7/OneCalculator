@@ -18,14 +18,18 @@ export default function Standard() {
     result: '',
   });
 
+  const [history, setHistory] = useState([])
+
   const onChangeOperation = (e) => {
     setState({ ...state, operation: e.target.value.toString().trim() });
   };
 
   const calculate = () => {
     try {
+      let _op = state.operation;
       const result = compute(state.operation);
-      setState({ ...state, result: result });
+      setHistory(preH => [...preH, _op+'='+ result])
+      setState({ ...state, result: result});
     } catch (error) {
       alert('Input not valid');
       clear();
@@ -58,6 +62,7 @@ export default function Standard() {
   return (
     <div style={{maxWidth: '450px', margin: '0 auto'}}>
       <Header title="Standard" showTransactions={showTransactions} />
+   
       <Container fluid="sm" >
         <Stack>
         
