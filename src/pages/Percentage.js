@@ -46,7 +46,7 @@ export default function Percentage() {
   }
 
   return (
-    <>
+    <div style={{maxWidth: '450px', margin: '0 auto'}}>
       <Header title="Percentage" showTransactions={showTransactions} />
 
       <Container fluid="sm">
@@ -85,6 +85,6 @@ export default function Percentage() {
           Percentage change from {state.from} to {state.to} is {state.fromToResult} %
         </Alert>}
       </Container>
-    </>
+    </div>
   );
 }
