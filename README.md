@@ -1,3 +1,9 @@
 # OneCalculator
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/mayurkode7/OneCalculator)
+This project is designed to solve major problem in finding best calculation experience 
+
+- Free to use
+- Accurate results 
+- Different types of calculators 
+- Fast 
+- Efficient 
