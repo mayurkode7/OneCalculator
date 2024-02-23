@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/OneCalculator/static/css/main.4682ec4b.css",
+    "main.js": "/OneCalculator/static/js/main.62cb3800.js",
+    "index.html": "/OneCalculator/index.html",
+    "main.4682ec4b.css.map": "/OneCalculator/static/css/main.4682ec4b.css.map",
+    "main.62cb3800.js.map": "/OneCalculator/static/js/main.62cb3800.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4682ec4b.css",
+    "static/js/main.62cb3800.js"
+  ]
+}
