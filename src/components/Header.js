@@ -11,10 +11,10 @@ function Header({title, showTransactions}) {
   return (
     <Container fluid="sm">
         <Row>
-          <Col xs={8}>
+          <Col xs={9}>
             <h4>{title}</h4>
           </Col>
-          <Col xs={4}>
+          <Col xs={3}>
             <Button
               variant="outline-secondary"
               size="sm"

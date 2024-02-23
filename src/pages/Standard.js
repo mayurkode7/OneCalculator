@@ -56,10 +56,11 @@ export default function Standard() {
   };
 
   return (
-    <>
+    <div style={{maxWidth: '450px', margin: '0 auto'}}>
       <Header title="Standard" showTransactions={showTransactions} />
-      <Container fluid="sm">
+      <Container fluid="sm" >
         <Stack>
+        
           <Form>
             <div className="operation">
               <Form.Group
@@ -107,7 +108,7 @@ export default function Standard() {
               </div> */}
             </div>
           </Form>
-
+        
           <Stack gap={3}>
             <div className="d-flex justify-content-center gap-4">
               <Button variant="warning btn-circle" onClick={keypadClick}>
@@ -238,6 +239,6 @@ export default function Standard() {
           </Stack>
         </Stack>
       </Container>
-    </>
+    </div>
   );
 }
