@@ -1,6 +1,6 @@
 {
-  "homepage": "https://mayurkode7.github.io",
-  "name": "stackblitz-starters-kdthmr",
+  "homepage": "https://mayurkode7.github.io/",
+  "name": "OneCalculator",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
