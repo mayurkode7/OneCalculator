@@ -13,7 +13,7 @@ const root = createRoot(document.getElementById('app'));
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Standard />,
+    element: <Percentage />,
   },
   {
     path: '/about',
@@ -31,8 +31,8 @@ const router = createBrowserRouter([
 
 root.render(
   <StrictMode>
-    <main>
+
     <RouterProvider router={router}  />
-    </main>
+    
   </StrictMode>
 );
