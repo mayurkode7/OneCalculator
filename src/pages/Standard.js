@@ -11,6 +11,8 @@ import Col from 'react-bootstrap/Col';
 import Menus from '../menus';
 import { compute } from '../utils';
 import { Calculator, House, List, ClockHistory } from 'react-bootstrap-icons';
+import Header from '../components/Header';
+
 
 export default function Standard() {
   const [state, setState] = useState({
@@ -57,28 +59,7 @@ export default function Standard() {
 
   return (
     <>
-      <Container fluid="sm">
-        <Row>
-          <Col xs={8}>
-            <h4>Standard Calculator</h4>
-          </Col>
-          <Col xs={4}>
-            <Button
-              variant="outline-secondary"
-              size="sm"
-              className="mr-2"
-              style={{ marginRight: 10 }}
-              onClick={showTransactions}
-            >
-              <i>
-                <ClockHistory size={20} />
-              </i>
-            </Button>
-            <Menus />
-          </Col>
-        </Row>
-        <hr />
-      </Container>
+      <Header title="Standard" showTransactions={showTransactions} />
       <Container fluid="sm">
         <Stack>
           <Form>
