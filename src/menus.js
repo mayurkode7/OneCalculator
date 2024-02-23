@@ -26,11 +26,13 @@ function Menus() {
         </i>
       </Button>
 
-      <Offcanvas show={show} onHide={handleClose} placement="top">
+      <Offcanvas show={show} onHide={handleClose} placement="start">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>All Calculators </Offcanvas.Title>
+        
         </Offcanvas.Header>
         <Offcanvas.Body className="menu">
+        <p>Fast, Free, and Flawless: The Future of Calculation is Here</p>
           <ListGroup>
             <ListGroup.Item onClick={() => onMenuClick('standard')}>
               Standard
