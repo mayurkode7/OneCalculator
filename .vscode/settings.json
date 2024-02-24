@@ -1,8 +1,4 @@
 {
-    "cSpell.words": [
-        "Calculate",
-        "Calculations",
-        "Calculator",
-        "Menus"
-    ]
+    "cSpell.words": ["Calculate", "Calculations", "Calculator", "Menus"],
+    "editor.formatOnSave": true
 }
