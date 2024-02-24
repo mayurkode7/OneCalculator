@@ -15,7 +15,10 @@ export default function Percentage() {
     const [state, setState] = useState({
         from: '',
         to: '',
+        is: '',
+        what: '',
         fromToResult: null,
+        isWhatResult: null,
     })
     const keypadClick = (e) => {
         let input = e.target.innerHTML
@@ -40,6 +43,15 @@ export default function Percentage() {
         let r2 = evaluate(`${r1}/${from}`)
         let r3 = evaluate(`${r2} * 100`)
         setState({ ...state, fromToResult: '' + r3 })
+    }
+
+    const calculateIsWhat = () => {
+        // const from = state.from
+        // const to = state.to
+        // let r1 = evaluate(`${to} - ${from}`)
+        // let r2 = evaluate(`${r1}/${from}`)
+        // let r3 = evaluate(`${r2} * 100`)
+        setState({ ...state, isWhatResult: '' })
     }
 
     return (
@@ -67,7 +79,7 @@ export default function Percentage() {
                                 />
                             </InputGroup>
                         </Col>
-                        <Col xs="5">
+                        <Col xs="6">
                             <InputGroup className="mb-1">
                                 <InputGroup.Text>To</InputGroup.Text>
                                 <Form.Control
@@ -84,9 +96,9 @@ export default function Percentage() {
                             </InputGroup>
                         </Col>
 
-                        <Col xs="2">
-                            <Button className="mb-2" onClick={calculateFromTo}>
-                                Calculate
+                        <Col xs="1">
+                            <Button className="mb-2" onClick={calculateIsWhat}>
+                                =
                             </Button>
                         </Col>
                     </Row>
@@ -95,6 +107,58 @@ export default function Percentage() {
                     <Alert variant="info">
                         Percentage change from {state.from} to {state.to} is{' '}
                         {state.fromToResult} %
+                    </Alert>
+                )}
+            </Container>
+
+            <Container fluid="sm">
+                <Form>
+                    <Row className="align-items-center">
+                        <Col xs="3">
+                            <InputGroup className="mb-1">
+                                <Form.Control
+                                    name="from"
+                                    onChange={(e) => {
+                                        setState({
+                                            ...state,
+                                            from: e.target.value,
+                                            fromToResult: null,
+                                        })
+                                    }}
+                                    id="inlineFormInputGroup"
+                                    placeholder="X"
+                                />
+                            </InputGroup>
+                        </Col>
+                        <Col xs="5">
+                            <span>is what percentage of </span>
+                        </Col>
+                        <Col xs="3">
+                            <InputGroup className="mb-1">
+                                <Form.Control
+                                    onChange={(e) => {
+                                        setState({
+                                            ...state,
+                                            to: e.target.value,
+                                            fromToResult: null,
+                                        })
+                                    }}
+                                    id="inlineFormInputGroup"
+                                    placeholder="Y"
+                                />
+                            </InputGroup>
+                        </Col>
+
+                        <Col xs="1">
+                            <Button className="mb-2" onClick={calculateFromTo}>
+                                =
+                            </Button>
+                        </Col>
+                    </Row>
+                </Form>
+                {state.isWhatResult !== null && (
+                    <Alert variant="info">
+                        {state.is} is {state.isWhatResult} % of {state.what}
                     </Alert>
                 )}
             </Container>
