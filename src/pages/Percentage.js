@@ -15,16 +15,13 @@ export default function Percentage() {
     const [state, setState] = useState({
         from: '',
         to: '',
+        fromToResult: null,
         is: '',
         what: '',
-        fromToResult: null,
         isWhatResult: null,
     })
-    const keypadClick = (e) => {
-        let input = e.target.innerHTML
-        let _operation = state.operation + input
-        setState({ ...state, operation: _operation })
-    }
+
+    const [recentOperations, setRecentOperations] = useState([])
 
     const calculate = () => {}
 
@@ -46,12 +43,11 @@ export default function Percentage() {
     }
 
     const calculateIsWhat = () => {
-        // const from = state.from
-        // const to = state.to
-        // let r1 = evaluate(`${to} - ${from}`)
-        // let r2 = evaluate(`${r1}/${from}`)
-        // let r3 = evaluate(`${r2} * 100`)
         setState({ ...state, isWhatResult: '' })
+    }
+
+    const clearIsWhat = () => {
+        setState({ ...state, is: '', what: '', isWhatResult: null })
     }
 
     return (
@@ -97,7 +93,7 @@ export default function Percentage() {
                         </Col>
 
                         <Col xs="1">
-                            <Button className="mb-2" onClick={calculateIsWhat}>
+                            <Button className="mb-2" onClick={calculateFromTo}>
                                 =
                             </Button>
                         </Col>
@@ -110,7 +106,7 @@ export default function Percentage() {
                     </Alert>
                 )}
             </Container>
-
+            <hr />
             <Container fluid="sm">
                 <Form>
                     <Row className="align-items-center">
@@ -121,8 +117,8 @@ export default function Percentage() {
                                     onChange={(e) => {
                                         setState({
                                             ...state,
-                                            from: e.target.value,
-                                            fromToResult: null,
+                                            is: e.target.value,
+                                            isWhatResult: null,
                                         })
                                     }}
                                     id="inlineFormInputGroup"
@@ -130,7 +126,7 @@ export default function Percentage() {
                                 />
                             </InputGroup>
                         </Col>
-                        <Col xs="5">
+                        <Col xs="4">
                             <span>is what percentage of </span>
                         </Col>
                         <Col xs="3">
@@ -139,8 +135,8 @@ export default function Percentage() {
                                     onChange={(e) => {
                                         setState({
                                             ...state,
-                                            to: e.target.value,
-                                            fromToResult: null,
+                                            what: e.target.value,
+                                            isWhatResult: null,
                                         })
                                     }}
                                     id="inlineFormInputGroup"
@@ -149,9 +145,12 @@ export default function Percentage() {
                             </InputGroup>
                         </Col>
 
-                        <Col xs="1">
-                            <Button className="mb-2" onClick={calculateFromTo}>
+                        <Col xs="2">
+                            <Button className="mb-2" onClick={calculateIsWhat}>
                                 =
+                            </Button>
+                            <Button className="mb-2" onClick={clearIsWhat}>
+                                X
                             </Button>
                         </Col>
                     </Row>
