@@ -1,0 +1,17 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Header Logic",
+  "steps": [
+    {
+      "file": "src/components/Header.js",
+      "description": "Create Header component with props to accept title and recent operations",
+      "line": 16
+    },
+    {
+      "file": "src/components/Header.js",
+      "description": "this creates icon where user can click to open the modal",
+      "line": 32
+    }
+  ],
+  "ref": "main"
+}
