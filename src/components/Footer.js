@@ -5,7 +5,7 @@ function Footer() {
     return (
 // TODO: 
             <div className='footer'>
-                <p class="text-center">
+                <p className='footer'>
                     Made with <HeartFill size="20" color="red" /> by Mayur in
                     Bharat. Free to use and distribute.
                 </p>

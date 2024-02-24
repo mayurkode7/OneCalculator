@@ -58,14 +58,15 @@ a {
 
 .menu-item {
     width: '100%';
-}
-
-.menu {
     cursor: pointer;
 }
+
 
 .footer {
     position: fixed;
     bottom: 0;
-    color: 'grey'
+}
+
+p.footer {
+    color: 'red';
 }

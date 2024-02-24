@@ -5,6 +5,8 @@
         "daylerees.rainglow",
         "vsls-contrib.codetour",
         "jgclark.vscode-todo-highlight",
-        "hediet.vscode-drawio"
+        "hediet.vscode-drawio",
+        "adpyke.codesnap",
+        "illixion.vscode-vibrancy-continued"
     ]
 }
