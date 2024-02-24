@@ -53,9 +53,13 @@ h1 {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .menu-item {
   width: '100%';
 }
 
+.menu {
+  cursor: pointer;
+}

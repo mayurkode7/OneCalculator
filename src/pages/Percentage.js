@@ -126,8 +126,8 @@ export default function Percentage() {
                                 />
                             </InputGroup>
                         </Col>
-                        <Col xs="4">
-                            <span>is what percentage of </span>
+                        <Col xs="5">
+                            is what percentage of
                         </Col>
                         <Col xs="3">
                             <InputGroup className="mb-1">
@@ -145,12 +145,9 @@ export default function Percentage() {
                             </InputGroup>
                         </Col>
 
-                        <Col xs="2">
+                        <Col xs="1">
                             <Button className="mb-2" onClick={calculateIsWhat}>
                                 =
-                            </Button>
-                            <Button className="mb-2" onClick={clearIsWhat}>
-                                X
                             </Button>
                         </Col>
                     </Row>

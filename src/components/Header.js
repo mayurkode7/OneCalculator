@@ -22,7 +22,7 @@ function Header({ title, showTransactions }) {
                 </Col>
                 <Col xs={5}>
                     <Button
-                        variant="outline-secondary"
+                        variant="outline-primary"
                         size="sm"
                         className="mr-2"
                         style={{ marginRight: 10 }}
@@ -33,7 +33,7 @@ function Header({ title, showTransactions }) {
                         </i>
                     </Button>
                     <Button
-                        variant="outline-secondary"
+                        variant="outline-primary"
                         size="sm"
                         className="mr-2"
                         style={{ marginRight: 10 }}
