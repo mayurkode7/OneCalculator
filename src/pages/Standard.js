@@ -11,6 +11,7 @@ import Modal from 'react-bootstrap/Modal'
 import { compute } from '../utils'
 
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default function Standard() {
     const [show, setShow] = useState(false)
@@ -300,6 +301,7 @@ export default function Standard() {
                     </Button>
                 </Modal.Footer>
             </Modal>
+            <Footer />
         </div>
     )
 }

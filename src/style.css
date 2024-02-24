@@ -1,18 +1,18 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 1rem;
-  font-family: system-ui, sans-serif;
-  color: black;
-  background-color: white;
+    margin: 0;
+    padding: 1rem;
+    font-family: system-ui, sans-serif;
+    color: black;
+    background-color: white;
 }
 
 h1 {
-  font-weight: 800;
-  font-size: 1.5rem;
+    font-weight: 800;
+    font-size: 1.5rem;
 }
 
 /* .btn-circle {
@@ -26,40 +26,45 @@ h1 {
 } */
 
 .btn-circle {
-  width: 60px;
-  height: 60px;
-  padding: 10px 10px;
-  text-align: center;
-  font-size: 22px;
-  line-height: 1.42857;
+    width: 60px;
+    height: 60px;
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.42857;
 }
 
 .main-container {
-  width: 350px;
-  margin: 0 auto;
+    width: 350px;
+    margin: 0 auto;
 
-  /* height: calc(var(--vh, 1vh) \* 100); */
+    /* height: calc(var(--vh, 1vh) \* 100); */
 }
 
 .fullscreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-  background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: white;
 }
 
 a {
-  text-decoration: none;
-  cursor: pointer;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .menu-item {
-  width: '100%';
+    width: '100%';
 }
 
 .menu {
-  cursor: pointer;
+    cursor: pointer;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
 }
