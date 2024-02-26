@@ -19,15 +19,18 @@ export default function Percentage() {
         is: '',
         what: '',
         isWhatResult: null,
+        percentOf: '',
+        x: '',
+        percentOfXResult: null
     })
 
     const [recentOperations, setRecentOperations] = useState([])
 
-    const calculate = () => {}
+    const calculate = () => { }
 
-    const clear = () => {}
+    const clear = () => { }
 
-    const clearLastEntry = () => {}
+    const clearLastEntry = () => { }
 
     const showTransactions = () => {
         alert('feature coming soon...')
@@ -43,7 +46,19 @@ export default function Percentage() {
     }
 
     const calculateIsWhat = () => {
-        setState({ ...state, isWhatResult: '' })
+        const is = state.is
+        const what = state.what
+        let r1 = evaluate(`${is}/${what}`)
+        let r2 = evaluate(`${r1} * 100`)
+        setState({ ...state, isWhatResult: '' + r2 })
+    }
+
+    const calculatePercentOfX = () => {
+        const percentOf = state.percentOf
+        const x = state.x
+        let r1 = evaluate(`${percentOf}/100`)
+        let r2 = evaluate(`${r1} * ${x}`)
+        setState({ ...state, percentOfXResult: '' + r2 })
     }
 
     const clearIsWhat = () => {
@@ -155,6 +170,63 @@ export default function Percentage() {
                 {state.isWhatResult !== null && (
                     <Alert variant="info">
                         {state.is} is {state.isWhatResult} % of {state.what}
+                    </Alert>
+                )}
+            </Container>
+
+            <hr />
+            <Container fluid="sm">
+                <Form>
+                    <Row className="align-items-center">
+                        <Col xs="3">
+                            What is
+                        </Col>
+                        <Col xs="3">
+                            <InputGroup className="mb-1">
+                                <Form.Control
+                                    name="percentOf"
+                                    onChange={(e) => {
+                                        setState({
+                                            ...state,
+                                            percentOf: e.target.value,
+                                            percentOfXResult: null,
+                                        })
+                                    }}
+                                    id="inlineFormInputGroup"
+                                    placeholder="Y"
+                                />
+                            </InputGroup>
+                        </Col>
+                        <Col xs="2">
+                            % of
+                        </Col>
+                        <Col xs="3">
+                            <InputGroup className="mb-1">
+                                <Form.Control
+                                    name='X'
+                                    onChange={(e) => {
+                                        setState({
+                                            ...state,
+                                            x: e.target.value,
+                                            percentOfXResult: null,
+                                        })
+                                    }}
+                                    id="inlineFormInputGroup"
+                                    placeholder="X"
+                                />
+                            </InputGroup>
+                        </Col>
+
+                        <Col xs="1">
+                            <Button className="mb-2" onClick={calculatePercentOfX}>
+                                =
+                            </Button>
+                        </Col>
+                    </Row>
+                </Form>
+                {state.percentOfXResult !== null && (
+                    <Alert variant="info">
+                        {state.percentOf} % of {state.x} is {state.percentOfXResult}
                     </Alert>
                 )}
             </Container>
